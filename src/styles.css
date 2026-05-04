@@ -122,3 +122,66 @@ tbody td {
 .error {
   color: #b91c1c;
 }
+
+.shipment-details-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.shipment-details-table td {
+  padding: 12px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.shipment-details-table .label {
+  font-weight: 600;
+  width: 200px;
+  background: #f8fafc;
+}
+
+.shipment-info {
+  background: #f8fafc;
+  padding: 16px;
+  border-radius: 8px;
+  margin-top: 20px;
+}
+
+.shipment-info p {
+  margin: 8px 0;
+  line-height: 1.6;
+}
+
+.back-btn {
+  margin-bottom: 16px;
+  display: inline-block;
+  background: #6b7280;
+  padding: 8px 12px;
+  font-size: 14px;
+}
+
+.back-btn:hover {
+  background: #4b5563;
+}
+
+.file-info {
+  background: #f0fdf4;
+  padding: 12px;
+  border-radius: 8px;
+  margin: 12px 0;
+  border-left: 4px solid #22c55e;
+}
+
+.file-info strong {
+  color: #166534;
+}
+
+.message {
+  color: #059669;
+  font-weight: 600;
+  padding: 12px;
+  background: #ecfdf5;
+  border-radius: 8px;
+  margin: 12px 0;
+}
+

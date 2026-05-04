@@ -2,6 +2,7 @@ import { BrowserRouter, Link, Route, Routes } from 'react-router-dom';
 import Home from './pages/Home.jsx';
 import ShipmentsPage from './pages/ShipmentsPage.jsx';
 import NewShipmentPage from './pages/NewShipmentPage.jsx';
+import ShipmentDetailsPage from './pages/ShipmentDetailsPage.jsx';
 
 function App() {
   return (
@@ -9,14 +10,14 @@ function App() {
       <div className="app-container">
         <header>
           <div className="header-top">
-            <h1>Tranship</h1>
+            <h1>ShipTranslate</h1>
             <nav>
               <Link to="/">Inicio</Link>
-              <Link to="/shipments">Envíos</Link>
-              <Link to="/shipments/new">Nuevo envío</Link>
+              <Link to="/shipments">EDI</Link>
+              <Link to="/shipments/new">Nuevo EDI</Link>
             </nav>
           </div>
-          <p>Gestión de envíos y transporte de mercancías.</p>
+          <p>Gestión de EDI y transporte de mercancías.</p>
         </header>
 
         <main>
@@ -24,6 +25,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/shipments" element={<ShipmentsPage />} />
             <Route path="/shipments/new" element={<NewShipmentPage />} />
+            <Route path="/shipments/:id" element={<ShipmentDetailsPage />} />
           </Routes>
         </main>
       </div>
