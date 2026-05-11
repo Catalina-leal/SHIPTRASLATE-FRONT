@@ -2,6 +2,7 @@ import { BrowserRouter, Link, Route, Routes } from 'react-router-dom';
 import Home from './pages/Home.jsx';
 import ShipmentsPage from './pages/ShipmentsPage.jsx';
 import NewShipmentPage from './pages/NewShipmentPage.jsx';
+import EdiPreviewPage from './pages/EdiPreviewPage.jsx';
 import ShipmentDetailsPage from './pages/ShipmentDetailsPage.jsx';
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/shipments" element={<ShipmentsPage />} />
             <Route path="/shipments/new" element={<NewShipmentPage />} />
+            <Route path="/edi-preview" element={<EdiPreviewPage />} />
             <Route path="/shipments/:id" element={<ShipmentDetailsPage />} />
           </Routes>
         </main>

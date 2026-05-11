@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { uploadEdiFile } from '../services/api.js';
+import { parseEdiFile } from '../services/api.js';
 
 function NewShipmentPage() {
   const [file, setFile] = useState(null);
@@ -27,11 +27,10 @@ function NewShipmentPage() {
     setMessage('Cargando archivo...');
 
     try {
-      const result = await uploadEdiFile(file);
-      setMessage('Archivo EDI cargado con éxito.');
-      setTimeout(() => {
-        navigate(`/shipments/${result._id}`);
-      }, 500);
+      const parsedData = await parseEdiFile(file);
+      setMessage('Archivo EDI procesado con éxito.');
+      // Redirigir a la página de preview con la data parseada
+      navigate('/edi-preview', { state: { parsedData, file } });
     } catch (uploadError) {
       const backendData = uploadError.response?.data;
       const serverMessage = backendData?.message;
@@ -54,7 +53,7 @@ function NewShipmentPage() {
       <h2>Cargar archivo EDI</h2>
       <p>
         Sube un archivo EDI válido para procesarlo según la naviera. Se aceptan archivos de texto con
-        formato EDI.
+        formato EDI. Después de subirlo, podrás revisar la información extraída antes de guardarla.
       </p>
       <form onSubmit={handleUpload}>
         <label>
